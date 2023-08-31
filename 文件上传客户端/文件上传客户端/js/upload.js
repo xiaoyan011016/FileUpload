@@ -596,3 +596,205 @@
     uploadFile(file);
   });
 })();
+
+// 切片上传&断点续传
+(function () {
+  let upload = document.querySelector("#upload7"),
+    upload_inp = upload.querySelector(".upload_inp"),
+    upload_inp_select = upload.querySelector(".upload_button.select"),
+    upload_progress = upload.querySelector(".upload_progress"),
+    upload_progress_value = upload_progress.querySelector(".value");
+  let _file = null;
+
+  const isGo = (ele) => {
+    return (
+      ele.classList.contains("disable") || ele.classList.contains("loading")
+    );
+  };
+  // 处理hash名字
+  const createBuffer = (file) => {
+    return new Promise((resolve) => {
+      let reader = new FileReader();
+      reader.readAsArrayBuffer(file);
+      reader.onload = (res) => {
+        let buffer = res.target.result;
+        let spark = new SparkMD5.ArrayBuffer();
+        spark.append(buffer);
+        let hash = spark.end();
+        let suffix = /\.[a-zA-Z0-9]+/.exec(file.name)[0];
+        resolve({
+          buffer,
+          hash,
+          suffix,
+          filename: `${hash}${suffix}`, //手动拼接文件和后缀
+        });
+      };
+    });
+  };
+
+  // 给选择文件按钮绑定时间事件
+  upload_inp_select.addEventListener("click", async function (e) {
+    e.preventDefault();
+    // 判断是否有disable或loading属性有就不继续往下走。类似节流防抖
+    if (isGo(this)) return;
+    //   触发自带的点击方法选取文件
+    upload_inp.click();
+  });
+
+  upload_inp.addEventListener("change", async (ev) => {
+    ev.preventDefault();
+    //   文件选取需要基于change事件完成
+    let file = upload_inp.files[0];
+    _file = file;
+    if (!_file) {
+      alert("请先选择文件");
+      return;
+    }
+    // 设置按钮样式
+    upload_inp_select.classList.add("loading");
+    // 显示进度条模块
+    upload_progress.style.display = "block";
+    upload_progress_value.style.width = "0";
+
+    let { hash, suffix } = await createBuffer(_file); //文件的hash名和后缀
+    // 获取已有切片数量
+    let already = [];
+    try {
+      // 该接口调用会返回已有切片数量，如果fileList长度为0或进入catch都可以理解为服务器没有切片，
+      // 现有文件切片需要全部上传
+      let { code, fileList } = await instance.get("/upload_already", {
+        params: {
+          hash,
+        },
+      });
+      if (+code === 0) {
+        already = fileList;
+      }
+    } catch (error) {}
+
+    // 设置切片处理逻辑：固定数量&固定大小结合
+    let max = 100 * 1024 * 1024; // 切片最大100kb
+    let count = Math.ceil(_file.size / max); //切片数量,同时向上取整
+    // 判断数量是否大于了最大切片数量，大于则以固定数量为基准实现
+    if (count > 100) {
+      count = 100; //固定切片数量最大为100个
+      max = _file.size / count;
+    }
+    let chunks = []; //保存每一个切片
+    // 生成切片,调用file文件原型上提供的slice方法进行切片
+    let index = 0; //当前切片的序号
+    while (index < count) {
+      chunks.push({
+        file: _file.slice(max * index, max * (index + 1)), //每一个切片的大小
+        filename: `${hash}_${index + 1}${suffix}`,
+      });
+      index++;
+    }
+
+    // 无论上传切片失败还是切片合并后上传失败，或者最终成功都需要清空loading，因此封装为函数
+    const clear = () => {
+      upload_inp_select.classList.remove("loading");
+      upload_progress.style.display = "none";
+      upload_progress_value.style.width = "0%";
+    };
+    // 控制进度条，根据切片上传的情况控制
+    index = 0; //当前已上传切片数量
+    const complete = async () => {
+      index++;
+      // 设置进度条样式,当前切片的数量/总切片数量
+      upload_progress_value.style.width = `${(index / count) * 100}%`;
+      // 当切片的数量到达指定的数量的时候就开始合并切片
+      if (index < count) return;
+      // 切片合并
+      upload_progress_value.style.width = `100%`;
+      try {
+        let { code, servicePath } = await instance.post(
+          "/upload_merge",
+          {
+            HASH: hash,
+            count,
+          },
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+          }
+        );
+        if (+code === 0) {
+          // 合并成功
+          alert(`上传成功:文件服务器地址${servicePath}`);
+          return;
+        }
+      } catch (error) {
+        alert("合并失败");
+      } finally {
+        clear();
+      }
+    };
+
+    // for (let i = 0; i < chunks.length; i++) {
+    //   let chunk = chunks[i];
+    //   // 进入该函数之前，判断该切片是否已经存在于服务器,服务器返回切片的名字
+    //   if (already.length > 0 && already.includes(chunk.filename)) {
+    //     complete(); //执行进度条控制
+    //     return;
+    //   }
+    //   // 获取每一个切片信息上传服务器
+    //   let fm = new FormData();
+    //   fm.append("file", chunk.file);
+    //   fm.append("filename", chunk.filename);
+    //   instance
+    //     .post("/upload_chunk", fm)
+    //     .then((res) => {
+    //       if (+res.code === 0) {
+    //         // 上传成功,执行进度条控制模块
+    //         complete();
+    //         return;
+    //       }
+    //       Promise.reject(res.codeText);
+    //     })
+    //     .catch((err) => {
+    //       alert("当前切片上传失败，请您稍后再试~~");
+    //       clear();
+    //     });
+    // }
+
+    chunks.forEach((chunk) => {
+      // 进入该函数之前，判断该切片是否已经存在于服务器,服务器返回切片的名字
+      if (already.length > 0 && already.includes(chunk.filename)) {
+        complete(); //执行进度条控制
+        return;
+      }
+      // 获取每一个切片信息上传服务器
+      let fm = new FormData();
+      fm.append("file", chunk.file);
+      fm.append("filename", chunk.filename);
+      instance
+        .post("/upload_chunk", fm)
+        .then((res) => {
+          if (+res.code === 0) {
+            // 上传成功,执行进度条控制模块
+            complete();
+            return;
+          }
+          Promise.reject(res.codeText);
+        })
+        .catch((err) => {
+          alert("当前切片上传失败，请您稍后再试~~");
+          clear();
+        });
+      // try {
+      //   let { code, codeText } = await instance.post("/upload_chunk", fm);
+      //   if (+code === 0) {
+      //     // 上传成功,执行进度条控制模块
+      //     complete();
+      //     return;
+      //   }
+      //   throw codeText;
+      // } catch (err) {
+      //   console.log(err, "单个切片上传失败");
+      //   clear();
+      // }
+    });
+  });
+})();
