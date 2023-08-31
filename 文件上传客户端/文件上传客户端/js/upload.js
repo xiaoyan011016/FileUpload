@@ -521,3 +521,78 @@
       });
   });
 })();
+
+// 拖拽上传
+(function () {
+  let upload = document.querySelector("#upload6"),
+    upload_inp = upload.querySelector(".upload_inp"),
+    upload_submit = upload.querySelector(".upload_submit"),
+    upload_mark = upload.querySelector(".upload_mark");
+
+  let _file = null;
+  let isRun = false; //节流防抖标志,true代表节流防抖，代表正在运行
+
+  const isGo = (ele) => {
+    return (
+      ele.classList.contains("disable") || ele.classList.contains("loading")
+    );
+  };
+
+  // 上传文件方法
+  const uploadFile = async (file) => {
+    if (isRun) return;
+    isRun = true;
+    // 将遮罩层启动
+    upload_mark.style.display = "block";
+    try {
+      let fm = new FormData();
+      fm.append("file", file);
+      fm.append("filename", file.name);
+      let { code, codeText, servicePath } = await instance.post(
+        "/upload_single",
+        fm
+      );
+      if (+code === 0) {
+        alert(`上传成功:文件服务器地址${servicePath}`);
+        return;
+      }
+      throw codeText;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      // 清除默认样式类
+      upload_mark.style.display = "none";
+      isRun = false;
+    }
+  };
+
+  // 给选择文件按钮绑定时间事件
+  upload_submit.addEventListener("click", async function () {
+    // 判断是否有disable或loading属性有就不继续往下走。类似节流防抖
+    if (isGo(this)) return;
+    //   触发自带的点击方法选取文件
+    upload_inp.click();
+  });
+
+  upload_inp.addEventListener("change", async () => {
+    //   文件选取需要基于change事件完成
+    _file = upload_inp.files[0];
+    uploadFile(_file);
+  });
+
+  // 容器添加拖拽事件
+  /*   upload.addEventListener("dragenter", (e) => {
+    console.log("进入了");
+  });
+  upload.addEventListener("dragleave", (e) => {
+    console.log("离开了");
+  }); */
+  upload.addEventListener("dragover", (e) => {
+    e.preventDefault();
+  });
+  upload.addEventListener("drop", (e) => {
+    e.preventDefault();
+    let file = e.dataTransfer.files[0];
+    uploadFile(file);
+  });
+})();
