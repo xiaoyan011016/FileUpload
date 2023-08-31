@@ -1,0 +1,1386 @@
+{
+	"approved" : true,
+	"contentrating" : "Everyone",
+	"description" : "CyberDolls-JK-\n4K resolution\nPowered by AI*Syoujyo NEO Studio\nA moving character / background / Seamless circulating particles\nenjoy！\n\n人形少女会梦见电子猫吗\n4K分辨率，使用StudioNEOV2和Unity制作。\n可动人物 / 背景 / 粒子\n请享受吧！多多订阅，谢谢茄子",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"AuthorInformation" : 
+			{
+				"order" : 203,
+				"text" : "<br />●  作者信息(Author Information)<br /><small>壁纸作者 | 待宵姫です<br/>哔哩哔哩 | https://space.bilibili.com/865683<br/>使用StudioNEOV2 & Unity制作<br/>欢迎订阅我的哔哩哔哩频道，感谢支持！<br/>可视化音频代码修改自Perfect Wallpaper(884307090,ZYM&XTong）</small>",
+				"type" : "text"
+			},
+			"BlurColorGradient" : 
+			{
+				"condition" : "visual_audio_model.value == 1 && ColorMode.value == 2",
+				"order" : 60,
+				"text" : "<br />模糊色渐变<br />Blur Gradient<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"ColorMode" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"options" : 
+				[
+					{
+						"condition" : "PWLinePosition.value == 1",
+						"label" : "普通模式",
+						"value" : 1
+					},
+					{
+						"condition" : "PWLinePosition.value == 1",
+						"label" : "纯色渐变",
+						"value" : 2
+					},
+					{
+						"label" : "彩虹渐变",
+						"value" : 3
+					}
+				],
+				"order" : 58,
+				"text" : "<br />色彩模式<br />Color Mode<br />",
+				"type" : "combo",
+				"value" : 1
+			},
+			"ColorRhythm" : 
+			{
+				"condition" : "visual_audio_model.value == 1 && ColorMode.value == 3",
+				"order" : 61,
+				"text" : "<br />炫彩律动<br />Color Rhythm<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"DateFormat" : 
+			{
+				"condition" : "showDate.value == true",
+				"options" : 
+				[
+					{
+						"label" : "YYYY年MM月DD日 星期x",
+						"value" : 1
+					},
+					{
+						"label" : "YYYY年MM月DD日",
+						"value" : 2
+					},
+					{
+						"label" : "MM月DD日 星期x",
+						"value" : 3
+					},
+					{
+						"label" : "MM月DD日",
+						"value" : 4
+					},
+					{
+						"label" : "星期x",
+						"value" : 5
+					},
+					{
+						"label" : "月份 星期x",
+						"value" : 6
+					},
+					{
+						"label" : "月份",
+						"value" : 7
+					},
+					{
+						"label" : "YYYY-MM-DD week",
+						"value" : 8
+					},
+					{
+						"label" : "YYYY-MM-DD 星期x",
+						"value" : 9
+					},
+					{
+						"label" : "YYYY-MM-DD",
+						"value" : 10
+					},
+					{
+						"label" : "MM-DD week",
+						"value" : 11
+					},
+					{
+						"label" : "Month week",
+						"value" : 12
+					},
+					{
+						"label" : "week",
+						"value" : 13
+					},
+					{
+						"label" : "Month",
+						"value" : 14
+					},
+					{
+						"label" : "YYYY/MM/DD week",
+						"value" : 15
+					},
+					{
+						"label" : "YYYY/MM/DD 星期x",
+						"value" : 16
+					},
+					{
+						"label" : "YYYY/MM/DD",
+						"value" : 17
+					},
+					{
+						"label" : "MM/DD week",
+						"value" : 18
+					},
+					{
+						"label" : "MM/DD",
+						"value" : 19
+					},
+					{
+						"label" : "Month",
+						"value" : 20
+					},
+					{
+						"label" : "MM/DD/YYYY week",
+						"value" : 21
+					},
+					{
+						"label" : "MM/DD/YYYY 星期x",
+						"value" : 22
+					},
+					{
+						"label" : "MM/DD/YYYY",
+						"value" : 23
+					},
+					{
+						"label" : "MM-DD-YYYY",
+						"value" : 24
+					},
+					{
+						"label" : "MM-DD-YYYY week",
+						"value" : 25
+					},
+					{
+						"label" : "MM-DD-YYYY 星期x",
+						"value" : 26
+					},
+					{
+						"label" : "MM.DD.YYYY",
+						"value" : 27
+					},
+					{
+						"label" : "YYYY.MM.DD",
+						"value" : 28
+					},
+					{
+						"label" : "YYYY.MM.DD Week",
+						"value" : 29
+					},
+					{
+						"label" : "YYYY.MM.DD 星期x",
+						"value" : 30
+					},
+					{
+						"label" : "MM.DD.YYYY Week",
+						"value" : 31
+					},
+					{
+						"label" : "MM.DD.YYYY 星期x",
+						"value" : 32
+					},
+					{
+						"label" : "MM月DD日YYYY年 星期x",
+						"value" : 33
+					}
+				],
+				"order" : 161,
+				"text" : "<br />日期格式<br />Date Format<br />",
+				"type" : "combo",
+				"value" : 15
+			},
+			"DateSize" : 
+			{
+				"condition" : "showDate.value == true",
+				"max" : 50,
+				"min" : 10,
+				"order" : 162,
+				"text" : "<br />日期大小<br />Date Size<br />",
+				"type" : "slider",
+				"value" : 15
+			},
+			"DateX" : 
+			{
+				"condition" : "showDate.value == true",
+				"max" : 100,
+				"min" : 0,
+				"order" : 163,
+				"text" : "<br />日期-X(%)<br />Date-X(%)<br />",
+				"type" : "slider",
+				"value" : 50
+			},
+			"DateY" : 
+			{
+				"condition" : "showDate.value == true",
+				"max" : 100,
+				"min" : 0,
+				"order" : 164,
+				"text" : "<br />日期-Y(%)<br />Date-Y(%)<br />",
+				"type" : "slider",
+				"value" : 54
+			},
+			"GradientRate" : 
+			{
+				"condition" : "visual_audio_model.value == 1 && ColorMode.value != 1",
+				"max" : 40,
+				"min" : 1,
+				"order" : 64,
+				"text" : "<br />渐变速率<br />Gradient Rate<br />",
+				"type" : "slider",
+				"value" : 5
+			},
+			"PWLineBlurColor" : 
+			{
+				"condition" : "(visual_audio_model.value == 2 && (PWLineColorMode.value == 1 || PWLineColorMode.value == 3))||(PWLineColorMode.value == 2 && PWLineBlurColorGradient.value == false )",
+				"order" : 81,
+				"text" : "<br />模糊颜色<br />Blur Color<br />",
+				"type" : "color",
+				"value" : "1 0.8 0.8"
+			},
+			"PWLineBlurColorGradient" : 
+			{
+				"condition" : "visual_audio_model.value == 2 && PWLineColorMode.value == 2",
+				"order" : 78,
+				"text" : "<br />模糊色渐变<br />Blur Gradient<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"PWLineColor" : 
+			{
+				"condition" : "visual_audio_model.value == 2 && PWLineColorMode.value == 1||(PWLineColorMode.value == 2 && PWLineSolidColorGradient.value == false )",
+				"order" : 80,
+				"text" : "<br />音频颜色<br />Wave Color<br />",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"PWLineColorMode" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"options" : 
+				[
+					{
+						"condition" : "PWLinePosition.value == 1",
+						"label" : "普通模式",
+						"value" : 1
+					},
+					{
+						"condition" : "PWLinePosition.value == 1",
+						"label" : "纯色渐变",
+						"value" : 2
+					},
+					{
+						"label" : "彩虹渐变",
+						"value" : 3
+					}
+				],
+				"order" : 76,
+				"text" : "<br />色彩模式<br />Color Mode<br />",
+				"type" : "combo",
+				"value" : 1
+			},
+			"PWLineColorRhythm" : 
+			{
+				"condition" : "visual_audio_model.value == 2 && PWLineColorMode.value == 3",
+				"order" : 79,
+				"text" : "<br />炫彩律动<br />Color Rhythm<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"PWLineDensity" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"max" : 12,
+				"min" : 1,
+				"order" : 71,
+				"text" : "<br />音频疏密<br />Wave Density<br />",
+				"type" : "slider",
+				"value" : 12
+			},
+			"PWLineDirection" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"options" : 
+				[
+					{
+						"condition" : "PWLinePosition.value == 1",
+						"label" : "向上/左-Upward-Left",
+						"value" : 1
+					},
+					{
+						"condition" : "PWLinePosition.value == 1",
+						"label" : "向下/右-Down-Right",
+						"value" : 2
+					},
+					{
+						"label" : "双向-Two Way",
+						"value" : 3
+					}
+				],
+				"order" : 68,
+				"text" : "<br />音频方向<br />Wave direction<br />",
+				"type" : "combo",
+				"value" : 3
+			},
+			"PWLineGradientRate" : 
+			{
+				"condition" : "visual_audio_model.value == 2 && PWLineColorMode.value != 1",
+				"max" : 40,
+				"min" : 1,
+				"order" : 82,
+				"text" : "<br />渐变速率<br />Gradient Rate<br />",
+				"type" : "slider",
+				"value" : 5
+			},
+			"PWLinePosition" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"options" : 
+				[
+					{
+						"label" : "横-Transverse",
+						"value" : 1
+					},
+					{
+						"label" : "竖-Vertical",
+						"value" : 2
+					}
+				],
+				"order" : 66,
+				"text" : "<br />音频位置<br />Wave Position<br />",
+				"type" : "combo",
+				"value" : 1
+			},
+			"PWLineRange" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"max" : 15,
+				"min" : 1,
+				"order" : 72,
+				"text" : "<br />音频幅度<br />Wave Range<br />",
+				"type" : "slider",
+				"value" : 8
+			},
+			"PWLineShow" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"order" : 65,
+				"text" : "<br />可视化音频<br />Visual Audio<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"PWLineSolidColorGradient" : 
+			{
+				"condition" : "visual_audio_model.value == 2 && PWLineColorMode.value == 2",
+				"order" : 77,
+				"text" : "<br />颜色渐变<br />Color Gradient<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"PWLineSpacing" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"max" : 10,
+				"min" : 0,
+				"order" : 70,
+				"text" : "<br />音频间距(%)<br />Wave Spacing(%)<br />",
+				"type" : "slider",
+				"value" : 8
+			},
+			"PWLineStyle" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"options" : 
+				[
+					{
+						"label" : "长条-Bar",
+						"value" : 1
+					},
+					{
+						"label" : "波峰-Peak",
+						"value" : 2
+					},
+					{
+						"label" : "波峰(不连线)-Peak No Line",
+						"value" : 3
+					}
+				],
+				"order" : 67,
+				"text" : "<br />音频样式<br />Wave Style<br />",
+				"type" : "combo",
+				"value" : 1
+			},
+			"PWLineTransparency" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"max" : 100,
+				"min" : 0,
+				"order" : 73,
+				"text" : "<br />音频透明度<br />Wave Transparency<br />",
+				"type" : "slider",
+				"value" : 80
+			},
+			"PWLineWidth" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"max" : 10,
+				"min" : 1,
+				"order" : 69,
+				"text" : "<br />音频线宽<br />Wave Line Width<br />",
+				"type" : "slider",
+				"value" : 9
+			},
+			"PWLineX" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"max" : 100,
+				"min" : 0,
+				"order" : 74,
+				"text" : "<br />位置-X轴(%)<br />Center of circle-X(%)<br />",
+				"type" : "slider",
+				"value" : 50
+			},
+			"PWLineY" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"max" : 100,
+				"min" : 0,
+				"order" : 75,
+				"text" : "<br />位置-Y轴(%)<br />Center of circle-Y(%)<br />",
+				"type" : "slider",
+				"value" : 96
+			},
+			"PWMiddleLine" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"order" : 68.5,
+				"text" : "<br />显示中线<br />Middle Line<br />",
+				"type" : "bool",
+				"value" : false
+			},
+			"PolygonAngle" : 
+			{
+				"condition" : "visual_audio_model.value == 1 && showSemiCircle.value == false",
+				"max" : 12,
+				"min" : 1,
+				"order" : 50,
+				"text" : "<br />多边形变换<br />Polygon<br /><small>用波峰音频效果更明显</small><br />",
+				"type" : "slider",
+				"value" : 12
+			},
+			"SemiCircledirection" : 
+			{
+				"condition" : "visual_audio_model.value == 1 && showSemiCircle.value == true",
+				"options" : 
+				[
+					{
+						"label" : "向上-Upward",
+						"value" : 1
+					},
+					{
+						"label" : "向下-Down",
+						"value" : 2
+					},
+					{
+						"label" : "向左-Lift",
+						"value" : 3
+					},
+					{
+						"label" : "向右-Right",
+						"value" : 4
+					}
+				],
+				"order" : 47,
+				"text" : "<br />半圆方向<br />SemiCircle Direction<br />",
+				"type" : "combo",
+				"value" : 1
+			},
+			"SolidColorGradient" : 
+			{
+				"condition" : "visual_audio_model.value == 1 && ColorMode.value == 2",
+				"order" : 59,
+				"text" : "<br />颜色渐变<br />Color Gradient<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"Text_Background_Options" : 
+			{
+				"order" : 10,
+				"text" : "<br/><h4>●  壁纸设置(Wallpaper Options)</h4><br/>",
+				"type" : "text"
+			},
+			"Text_Other" : 
+			{
+				"order" : -1,
+				"text" : "<br/><h4>●  系统选项(System Options)</h4><small>勾选录音即可对桌面音频进行可视化</small><br/>",
+				"type" : "text"
+			},
+			"Text_Visual_Time" : 
+			{
+				"order" : 150,
+				"text" : "<br/><h4>●  时间选项(Time Options)</h4><small>可以更改位置、透明度、是否显示</small><br/>",
+				"type" : "text"
+			},
+			"Text_Visual_audio" : 
+			{
+				"order" : 40,
+				"text" : "<br/><h4>●  可视化音频(Visual Audio)</h4><small>可以切换模板，修改位置、大小、风格样式等</small><br/>",
+				"type" : "text"
+			},
+			"Text_Weather" : 
+			{
+				"order" : 180.09999999999999,
+				"text" : "<br/><h4>●  天气相关(Weather)</h4><small>需要联网，自动定位刷新天气，半小时刷新一次</small><br/>",
+				"type" : "text"
+			},
+			"Text_Weather_2" : 
+			{
+				"condition" : "weather_show.value == true",
+				"order" : 180.24000000000001,
+				"text" : "<small>★输入城市名称即可手动定位,例如：北京</small>",
+				"type" : "text"
+			},
+			"Text_line155" : 
+			{
+				"condition" : "showTime.value == true",
+				"order" : 155.5,
+				"text" : "<br/>--------时间相关(Time Correlation)--------<br/>",
+				"type" : "text"
+			},
+			"Text_line160" : 
+			{
+				"condition" : "showDate.value == true",
+				"order" : 160.5,
+				"text" : "<br/>--------日期相关(Date Correlation)--------<br/>",
+				"type" : "text"
+			},
+			"Text_line180" : 
+			{
+				"order" : 180,
+				"text" : "<br/>_______________________________<br/>",
+				"type" : "text"
+			},
+			"Text_line202" : 
+			{
+				"order" : 202,
+				"text" : "<br/>_______________________________<br/>",
+				"type" : "text"
+			},
+			"Text_line203" : 
+			{
+				"order" : 205,
+				"text" : "_______________________________<br/>",
+				"type" : "text"
+			},
+			"Text_line29" : 
+			{
+				"order" : 29,
+				"text" : "<br/>_______________________________<br/>",
+				"type" : "text"
+			},
+			"Text_line42" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"order" : 42,
+				"text" : "<br/>----------圆环(Circle)----------<br/>",
+				"type" : "text"
+			},
+			"Text_line43" : 
+			{
+				"condition" : "visual_audio_model.value == 2",
+				"order" : 43,
+				"text" : "<br/>----------直线(Line)----------<br/>",
+				"type" : "text"
+			},
+			"Text_line83" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 83,
+				"text" : "<br/>---------爱丽丝圆环(Alice Circle)-----------<br/>",
+				"type" : "text"
+			},
+			"Text_line9" : 
+			{
+				"order" : 9,
+				"text" : "<br/>_______________________________<br/>",
+				"type" : "text"
+			},
+			"Text_line99" : 
+			{
+				"order" : 149,
+				"text" : "<br/>_______________________________<br/>",
+				"type" : "text"
+			},
+			"TimeBlurColor" : 
+			{
+				"condition" : "(showTime.value == true || showDate.value == true) && TimeColorRhythm.value != true",
+				"order" : 154,
+				"text" : "<br />模糊颜色<br />Blur Color<br />",
+				"type" : "color",
+				"value" : "1 0.8 0.8"
+			},
+			"TimeColor" : 
+			{
+				"condition" : "(showTime.value == true || showDate.value == true) && TimeColorRhythm.value != true",
+				"order" : 153,
+				"text" : "<br />时间颜色<br />Time Color<br />",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"TimeColorRhythm" : 
+			{
+				"condition" : "showTime.value == true || showDate.value == true",
+				"order" : 152.5,
+				"text" : "<br />颜色律动<br />Color Rhythm<br />",
+				"type" : "bool",
+				"value" : false
+			},
+			"VideoVolume" : 
+			{
+				"max" : 100,
+				"min" : 0,
+				"order" : 16,
+				"text" : "<br />音量<br />Volume<br />",
+				"type" : "slider",
+				"value" : 50
+			},
+			"audio_AudioText" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 84.5,
+				"text" : "<br/><small>●  设置音频相关的参数</small><br/>",
+				"type" : "text"
+			},
+			"audio_BallText" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 85.5,
+				"text" : "<br/><small>●  设置小球相关的参数</small><br/>",
+				"type" : "text"
+			},
+			"audio_LineText" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 84.799999999999997,
+				"text" : "<br/><small>●  设置线条相关的参数</small><br/>",
+				"type" : "text"
+			},
+			"audio_RingText" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 83.099999999999994,
+				"text" : "<br/><small>●  设置音频圆环相关的参数</small><br/>",
+				"type" : "text"
+			},
+			"audio_amplitude" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"max" : 10,
+				"min" : 1,
+				"order" : 84.599999999999994,
+				"text" : "<br/>音频振幅<br/>Audio Amplitude<br/>",
+				"type" : "slider",
+				"value" : 5
+			},
+			"audio_ballRotation" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isBall.value == true",
+				"max" : 60,
+				"min" : -60,
+				"order" : 85.900000000000006,
+				"text" : "<br/>旋转小球<br/>Rotating Ball<br/>",
+				"type" : "slider",
+				"value" : 0
+			},
+			"audio_ballSize" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isBall.value == true",
+				"max" : 10,
+				"min" : 1,
+				"order" : 85.799999999999997,
+				"text" : "<br/>小球大小<br/>Ball Size<br/>",
+				"type" : "slider",
+				"value" : 3
+			},
+			"audio_ballSpacer" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isBall.value == true",
+				"max" : 10,
+				"min" : 1,
+				"order" : 85.700000000000003,
+				"text" : "<br/>小球间隔<br/>Ball Spacer<br/>",
+				"type" : "slider",
+				"value" : 4
+			},
+			"audio_color" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 83.900000000000006,
+				"text" : "<br/>颜色<br/>Color<br/>",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"audio_decline" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"max" : 20,
+				"min" : 0,
+				"order" : 84.700000000000003,
+				"text" : "<br/>音频衰弱<br/>Audio Decline<br/>",
+				"type" : "slider",
+				"value" : 20
+			},
+			"audio_distance" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isLineTo.value == true",
+				"max" : 100,
+				"min" : 0,
+				"order" : 85.299999999999997,
+				"text" : "<br/>内外环距离<br/>Distance<br/>",
+				"type" : "slider",
+				"value" : 0
+			},
+			"audio_firstPoint" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isLineTo.value == true",
+				"options" : 
+				[
+					{
+						"label" : "静态环/Static Ring",
+						"value" : 1
+					},
+					{
+						"label" : "内环/Inner Ring",
+						"value" : 2
+					},
+					{
+						"label" : "外环/Outer Ring",
+						"value" : 3
+					}
+				],
+				"order" : 85,
+				"text" : "<br/>第一点<br/>First Point<br/>",
+				"type" : "combo",
+				"value" : 2
+			},
+			"audio_isBall" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 85.599999999999994,
+				"text" : "<br/>显示小球<br/>Show Ball?<br/>",
+				"type" : "bool",
+				"value" : true
+			},
+			"audio_isClickOffset" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 84.200000000000003,
+				"text" : "<br/>鼠标坐标偏移<br/>Mouse Coordinate Offset?<br/>",
+				"type" : "bool",
+				"value" : false
+			},
+			"audio_isInnerRing" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 83.400000000000006,
+				"text" : "<br/>显示内圆环<br/>Show Inner Ring?<br/>",
+				"type" : "bool",
+				"value" : true
+			},
+			"audio_isLineTo" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 84.900000000000006,
+				"text" : "<br/>显示连线<br/>Show Line?<br/>",
+				"type" : "bool",
+				"value" : false
+			},
+			"audio_isOuterRing" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 83.5,
+				"text" : "<br/>显示外圆环<br/>Show Outer Ring?<br/>",
+				"type" : "bool",
+				"value" : true
+			},
+			"audio_isRing" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 83.200000000000003,
+				"text" : "<br/>显示圆环<br/>Show Ring?<br/>",
+				"type" : "bool",
+				"value" : true
+			},
+			"audio_isStaticRing" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 83.299999999999997,
+				"text" : "<br/>显示静态圆环<br/>Show Static Ring?<br/>",
+				"type" : "bool",
+				"value" : false
+			},
+			"audio_lineWidth" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isLineTo.value == true",
+				"max" : 10,
+				"min" : 1,
+				"order" : 85.400000000000006,
+				"text" : "<br/>线条粗细<br/>Line Width<br/>",
+				"type" : "slider",
+				"value" : 5
+			},
+			"audio_offsetX" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isClickOffset.value == false",
+				"max" : 100,
+				"min" : 0,
+				"order" : 84.299999999999997,
+				"text" : "<br/>X轴偏移<br/>Center of Ring-X(%)<br/>",
+				"type" : "slider",
+				"value" : 50
+			},
+			"audio_offsetY" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isClickOffset.value == false",
+				"max" : 100,
+				"min" : 0,
+				"order" : 84.400000000000006,
+				"text" : "<br/>Y轴偏移<br/>Center of Ring-Y(%)<br/>",
+				"type" : "slider",
+				"value" : 50
+			},
+			"audio_opacity" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"max" : 100,
+				"min" : 0,
+				"order" : 83.799999999999997,
+				"text" : "<br/>不透明度<br/>Opacity<br/>",
+				"type" : "slider",
+				"value" : 90
+			},
+			"audio_pointNum" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isLineTo.value == true",
+				"max" : 120,
+				"min" : 3,
+				"order" : 85.200000000000003,
+				"text" : "<br/>点的数量<br/>Point Number<br/>",
+				"type" : "slider",
+				"value" : 120
+			},
+			"audio_radius" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"max" : 10,
+				"min" : 1,
+				"order" : 83.599999999999994,
+				"text" : "<br/>圆环半径<br/>Radius<br/>",
+				"type" : "slider",
+				"value" : 5
+			},
+			"audio_ringRotation" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"max" : 60,
+				"min" : -60,
+				"order" : 83.700000000000003,
+				"text" : "<br/>旋转圆环<br/>Rotating Ring<br/>",
+				"type" : "slider",
+				"value" : 0
+			},
+			"audio_secondPoint" : 
+			{
+				"condition" : "visual_audio_model.value == 3 && audio_isLineTo.value == true",
+				"options" : 
+				[
+					{
+						"label" : "静态环/Static Ring",
+						"value" : 1
+					},
+					{
+						"label" : "内环/Inner Ring",
+						"value" : 2
+					},
+					{
+						"label" : "外环/Outer Ring",
+						"value" : 3
+					}
+				],
+				"order" : 85.099999999999994,
+				"text" : "<br/>第二点<br/>Second Point<br/>",
+				"type" : "combo",
+				"value" : 3
+			},
+			"audio_shadowBlur" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"max" : 10,
+				"min" : 0,
+				"order" : 84.099999999999994,
+				"text" : "<br/>模糊程度<br/>Blur Size<br/>",
+				"type" : "slider",
+				"value" : 3
+			},
+			"audio_shadowColor" : 
+			{
+				"condition" : "visual_audio_model.value == 3",
+				"order" : 84,
+				"text" : "<br/>模糊颜色<br/>Blur Color<br/>",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"blurColor" : 
+			{
+				"condition" : "(visual_audio_model.value == 1 && (ColorMode.value == 1 || ColorMode.value == 3))||(ColorMode.value == 2 && BlurColorGradient.value == false )",
+				"order" : 63,
+				"text" : "<br />模糊颜色<br />Blur Color<br />",
+				"type" : "color",
+				"value" : "1 0.8 0.8"
+			},
+			"cX" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"max" : 100,
+				"min" : 0,
+				"order" : 55,
+				"text" : "<br />圆心-X(%)<br />Center of circle-X(%)<br />",
+				"type" : "slider",
+				"value" : 50
+			},
+			"cY" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"max" : 100,
+				"min" : 0,
+				"order" : 56,
+				"text" : "<br />圆心-Y(%)<br />Center of circle-Y(%)<br />",
+				"type" : "slider",
+				"value" : 50
+			},
+			"color" : 
+			{
+				"condition" : "visual_audio_model.value == 1 && ColorMode.value == 1||(ColorMode.value == 2 && SolidColorGradient.value == false )",
+				"order" : 62,
+				"text" : "<br />音频颜色<br />Wave Color<br />",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"direction" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"options" : 
+				[
+					{
+						"label" : "向外-Outward",
+						"value" : 1
+					},
+					{
+						"label" : "向内-Inward",
+						"value" : 2
+					},
+					{
+						"label" : "双向-Two Way",
+						"value" : 3
+					}
+				],
+				"order" : 49,
+				"text" : "<br />音频方向<br />Wave direction<br />",
+				"type" : "combo",
+				"value" : 1
+			},
+			"lineWidth" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"max" : 10,
+				"min" : 1,
+				"order" : 52,
+				"text" : "<br />圆环线宽<br />Circle Line Width<br />",
+				"type" : "slider",
+				"value" : 9
+			},
+			"radius" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"max" : 80,
+				"min" : 20,
+				"order" : 53,
+				"text" : "<br />圆环半径(%)<br />Circle Radius(%)<br />",
+				"type" : "slider",
+				"value" : 40
+			},
+			"range" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"max" : 15,
+				"min" : 1,
+				"order" : 54,
+				"text" : "<br />音频幅度<br />Wave Range<br />",
+				"type" : "slider",
+				"value" : 9
+			},
+			"rotation" : 
+			{
+				"condition" : "visual_audio_model.value == 1 && showSemiCircle.value == false",
+				"max" : 10,
+				"min" : -10,
+				"order" : 51,
+				"text" : "<br />旋转角度<br />Rotation Angle<br />",
+				"type" : "slider",
+				"value" : 0
+			},
+			"schemecolor" : 
+			{
+				"order" : 1,
+				"text" : "<br />系统配色<br />System Color<br />",
+				"type" : "color",
+				"value" : "#7a7574"
+			},
+			"showCircle" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"order" : 45,
+				"text" : "<br />可视化音频<br />Visual Audio<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"showDate" : 
+			{
+				"order" : 152,
+				"text" : "<br />显示日期<br />Visual Time<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"showSemiCircle" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"order" : 46,
+				"text" : "<br />显示为半圆<br />Semicircle Effect<br />",
+				"type" : "bool",
+				"value" : false
+			},
+			"showTime" : 
+			{
+				"order" : 151,
+				"text" : "<br />显示时间<br />Visual Time<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"style" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"options" : 
+				[
+					{
+						"label" : "长条-Bar",
+						"value" : 1
+					},
+					{
+						"label" : "波峰-Peak",
+						"value" : 2
+					},
+					{
+						"label" : "波峰(不连线)-Peak No Line",
+						"value" : 3
+					}
+				],
+				"order" : 48,
+				"text" : "<br />音频样式<br />Wave Style<br />",
+				"type" : "combo",
+				"value" : 1
+			},
+			"tShowSencends" : 
+			{
+				"condition" : "showTime.value == true",
+				"order" : 158,
+				"text" : "<br />显示秒<br />Display seconds<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"tSize" : 
+			{
+				"condition" : "showTime.value == true",
+				"max" : 50,
+				"min" : 10,
+				"order" : 156,
+				"text" : "<br />时间大小<br />Time Size<br />",
+				"type" : "slider",
+				"value" : 18
+			},
+			"tStyle" : 
+			{
+				"condition" : "showTime.value == true",
+				"order" : 157,
+				"text" : "<br />24小时制<br />24-Hour<br />",
+				"type" : "bool",
+				"value" : true
+			},
+			"tX" : 
+			{
+				"condition" : "showTime.value == true",
+				"max" : 100,
+				"min" : 0,
+				"order" : 159,
+				"text" : "<br />时间-X(%)<br />Time-X(%)<br />",
+				"type" : "slider",
+				"value" : 50
+			},
+			"tY" : 
+			{
+				"condition" : "showTime.value == true",
+				"max" : 100,
+				"min" : 0,
+				"order" : 160,
+				"text" : "<br />时间-Y(%)<br />Time-Y(%)<br />",
+				"type" : "slider",
+				"value" : 50
+			},
+			"timetransparency" : 
+			{
+				"condition" : "showTime.value == true || showDate.value == true",
+				"max" : 100,
+				"min" : 0,
+				"order" : 155,
+				"text" : "<br />时间日期透明度<br />Time transparency<br />",
+				"type" : "slider",
+				"value" : 100
+			},
+			"videomodel" : 
+			{
+				"options" : 
+				[
+					{
+						"label" : "1",
+						"value" : 1
+					},
+					{
+						"label" : "2",
+						"value" : 2
+					},
+					{
+						"label" : "3",
+						"value" : 3
+					}
+				],
+				"order" : 14,
+				"text" : "<br />场景选择<br />Scene<br />",
+				"type" : "combo",
+				"value" : 1
+			},
+			"visual_audio_model" : 
+			{
+				"options" : 
+				[
+					{
+						"label" : "0-无(Nothing)",
+						"value" : 0
+					},
+					{
+						"label" : "1-圆环(Circle)",
+						"value" : 1
+					},
+					{
+						"label" : "2-直线(Line)",
+						"value" : 2
+					},
+					{
+						"label" : "3-爱丽丝圆环(Alice Circle)",
+						"value" : 3
+					}
+				],
+				"order" : 41,
+				"text" : "<br />可视化音频模板<br />Visual Audio Model<br />",
+				"type" : "combo",
+				"value" : 1
+			},
+			"wavetransparency" : 
+			{
+				"condition" : "visual_audio_model.value == 1",
+				"max" : 100,
+				"min" : 0,
+				"order" : 57,
+				"text" : "<br />可视化音频透明度<br />Wave Transparency<br />",
+				"type" : "slider",
+				"value" : 80
+			},
+			"weatherX" : 
+			{
+				"condition" : "weather_show.value == true",
+				"max" : 100,
+				"min" : 0,
+				"order" : 180.80000000000001,
+				"text" : "<br />天气-X(%)<br />Wrather-X(%)<br />",
+				"type" : "slider",
+				"value" : 50
+			},
+			"weatherY" : 
+			{
+				"condition" : "weather_show.value == true",
+				"max" : 100,
+				"min" : 0,
+				"order" : 180.90000000000001,
+				"text" : "<br />天气-Y(%)<br />Wrather-Y(%)<br />",
+				"type" : "slider",
+				"value" : 57
+			},
+			"weather_BlurColor" : 
+			{
+				"condition" : "weather_show.value == true",
+				"order" : 180.40000000000001,
+				"text" : "<br />模糊颜色<br />Blur Color<br />",
+				"type" : "color",
+				"value" : "1 0.8 0.8"
+			},
+			"weather_CityText" : 
+			{
+				"condition" : "weather_show.value == true",
+				"order" : 180.22999999999999,
+				"text" : "<br />定位城市<br />City Weather<br />",
+				"type" : "textinput"
+			},
+			"weather_Color" : 
+			{
+				"condition" : "weather_show.value == true",
+				"order" : 180.30000000000001,
+				"text" : "<br />天气颜色<br />weather Color<br />",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"weather_Format" : 
+			{
+				"condition" : "weather_show.value == true",
+				"options" : 
+				[
+					{
+						"label" : "城市+气温+天气+风向+风级",
+						"value" : 1
+					},
+					{
+						"label" : "城市+气温+天气",
+						"value" : 2
+					},
+					{
+						"label" : "城市+天气+气温+风向+风级",
+						"value" : 3
+					},
+					{
+						"label" : "城市+气温+天气",
+						"value" : 4
+					},
+					{
+						"label" : "城市+气温+天气+风向",
+						"value" : 5
+					},
+					{
+						"label" : "城市+天气+气温+风向",
+						"value" : 6
+					},
+					{
+						"label" : "城市+昼夜气温",
+						"value" : 7
+					},
+					{
+						"label" : "城市+天气",
+						"value" : 8
+					},
+					{
+						"label" : "城市+气温",
+						"value" : 9
+					},
+					{
+						"label" : "天气+气温",
+						"value" : 10
+					},
+					{
+						"label" : "气温+天气+风向",
+						"value" : 11
+					},
+					{
+						"label" : "天气+风向+气温",
+						"value" : 12
+					},
+					{
+						"label" : "风向+风级+气温",
+						"value" : 13
+					},
+					{
+						"label" : "天气+风向+风级",
+						"value" : 14
+					},
+					{
+						"label" : "天气+风向+风级+气温",
+						"value" : 15
+					},
+					{
+						"label" : "风向+风级+天气",
+						"value" : 16
+					},
+					{
+						"label" : "气温+天气",
+						"value" : 17
+					},
+					{
+						"label" : "城市",
+						"value" : 18
+					},
+					{
+						"label" : "风向+风级",
+						"value" : 19
+					},
+					{
+						"label" : "城市+风向+风级",
+						"value" : 20
+					},
+					{
+						"label" : "城市+天气+气温",
+						"value" : 21
+					}
+				],
+				"order" : 180.5,
+				"text" : "<br />天气格式<br />Weather Format<br />",
+				"type" : "combo",
+				"value" : 3
+			},
+			"weather_show" : 
+			{
+				"order" : 180.19999999999999,
+				"text" : "<br />显示天气<br />Show Weather<br />",
+				"type" : "bool",
+				"value" : false
+			},
+			"weather_size" : 
+			{
+				"condition" : "weather_show.value == true",
+				"max" : 50,
+				"min" : 10,
+				"order" : 180.69999999999999,
+				"text" : "<br />天气大小<br />Wrather Size<br />",
+				"type" : "slider",
+				"value" : 10
+			},
+			"weather_timetransparency" : 
+			{
+				"condition" : "weather_show.value == true",
+				"max" : 100,
+				"min" : 0,
+				"order" : 180.59999999999999,
+				"text" : "<br />天气透明度<br />Transparency<br />",
+				"type" : "slider",
+				"value" : 100
+			}
+		},
+		"supportsaudioprocessing" : true
+	},
+	"preview" : "preview.gif",
+	"tags" : [ "Animal" ],
+	"title" : "人形少女会梦见电子猫吗 | CyberDolls | 4K",
+	"type" : "web",
+	"workshopid" : "2089138947"
+}
